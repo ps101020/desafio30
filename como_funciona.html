@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Funciona o Desafio 30 Dias | Bruna Penha</title>
+ 
+ <style>
+     
+     
+    /* RESET E DEFINIÇÃO DE FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --color-bg-dark: #121212; /* Fundo principal mais escuro */
+    --color-card-bg: rgba(30, 30, 30, 0.9); /* Fundo dos cards com transparência */
+    --color-text: #E0E0E0; /* Branco suave */
+    --color-primary-start: #7B00D1; /* Roxo escuro */
+    --color-primary-end: #4169E1; /* Azul Royal (o tom que você gostou) */
+    --color-highlight: #7B00D1; /* Rosa Vibrante para CTA */
+}
+
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    /* IMAGEM DE FUNDO DO BODY */
+    background-image: url('imgbody.jpg'); /* Substitua 'fundo_desafio.jpg' pela sua imagem */
+    background-size: cover; /* Cobre toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* A imagem fica fixa ao rolar */
+    position: relative; /* Para o overlay */
+}
+
+/* OVERLAY PARA ESCURECER A IMAGEM DE FUNDO E AJUDAR NA LEITURA */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Preto com 70% de opacidade */
+    z-index: -1; /* Fica abaixo do conteúdo */
+}
+
+.container {
+    max-width: 600px;
+   
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Para o conteúdo ficar acima do overlay */
+    z-index: 1;
+}
+
+/* ESTILO DO CABEÇALHO */
+.header {
+    padding: 40px 0 30px;
+}
+
+.profile-pic { /* Se decidir usar a foto de perfil */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-highlight);
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.5);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em; /* Título maior */
+    font-weight: 700;
+    margin: 10px 0 5px;
+    color: var(--color-highlight); /* Destaque o nome da Bruna */
+    text-shadow: 0 0 10px rgba(255, 64, 129, 0.7);
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 5px 0 15px;
+    color: var(--color-text);
+}
+
+.tagline {
+    font-size: 1.1em;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+/* NAVEGAÇÃO PRINCIPAL (OS BOTÕES) */
+.main-navigation {
+    display: flex;
+    flex-direction: column; /* Botões um abaixo do outro */
+    gap: 15px; /* Espaço entre os botões */
+    
+    margin: auto;
+}
+
+/* ESTILO GERAL DOS BOTÕES */
+.btn {
+    display: flex; /* Para alinhar ícone e texto */
+    justify-content: center;
+    align-items: center;
+    width: 97%;
+    padding: 18px 8px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-size: 1.15em;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    m
+    
+}
+
+.btn i {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.btn-main {
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(75, 0, 130, 0.6); 
+    opacity: 0.95;
+}
+
+/* ESTILO ESPECÍFICO DO BOTÃO WHATSAPP / CTA FINAL */
+.btn-whatsapp-desafio {
+    background: linear-gradient(135deg, #075E54, #128C7E); /* Verde WhatsApp */
+    color: #FFFFFF;
+    border: none;
+    margin-top: 30px; /* Mais espaço antes do CTA final */
+}
+
+/* ANIMAÇÃO DE PULSAÇÃO PARA O CTA FINAL */
+.cta-final-pulse {
+    animation: pulse-final 2s infinite; 
+}
+
+@keyframes pulse-final {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(18, 140, 126, 0.5); } 
+    50% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(18, 140, 126, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(18, 140, 126, 0); }
+}
+
+/* Estilos para as futuras seções de conteúdo (se forem na mesma página) */
+.content-section {
+    min-height: 500px; /* Apenas para simular espaço */
+    background-color: var(--color-card-bg);
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    display: none; /* Estas seções estariam em outras páginas ou seriam controladas por JS */
+}
+
+/* FOOTER (Opcional) */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #888888;
+}
+
+/* --- NOVAS VARIAVEIS DE COR E FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+:root {
+    /* Cor Lilás para o Título H1 */
+    --color-lilac-highlight: #CC99FF; /* Lilás Claro/Roxo Pastel */
+    /* ... (Mantenha as outras variáveis) ... */
+}
+
+/* --- ESTILO DO BODY E OVERLAY (MANTIDO) --- */
+/* ... (Mantenha os estilos body e background-overlay anteriores) ... */
+
+
+/* --- NOVO HEADER COM IMAGEM DE FUNDO --- */
+.hero-header {
+    background-image: url('foto_bruna_header.jpg'); /* USE A FOTO DE FUNDO DA CLIENTE AQUI */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px 30px; /* Mais altura para o header */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay interno para garantir que o texto seja legível sobre a foto */
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sombra preta de 50% */
+    z-index: -1;
+}
+
+.header-content {
+    /* Centraliza o conteúdo dentro do header */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-pic {
+    /* Estilo da foto de perfil sobre a imagem de fundo */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-lilac-highlight);
+    box-shadow: 0 0 20px rgba(204, 153, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+/* H1 Lilás de Destaque */
+.lilac-highlight {
+    font-size: 2.8em;
+    font-weight: 900; /* Extra bold */
+    color: var(--color-lilac-highlight); 
+    text-shadow: 0 0 12px rgba(204, 153, 255, 0.8);
+    margin: 0 0 5px;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 5px 0 15px;
+    color: var(--color-text);
+}
+
+
+/* --- ANIMAÇÃO DOS BOTÕES (FADE-IN INICIAL) --- */
+.animated-btn {
+    opacity: 0; /* Inicia invisível */
+    transform: translateY(20px); /* Inicia 20px abaixo */
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: var(--delay); /* Usa a variável inline no HTML */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- SEÇÃO DE REDES SOCIAIS --- */
+.social-section {
+    padding: 30px 0;
+}
+
+.social-title {
+    font-size: 1.2em;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaço entre os botões sociais */
+}
+
+.btn-social {
+    width: 48%; /* Ocupa metade da largura para ficar lado a lado */
+    padding: 15px;
+    font-size: 1.05em;
+    margin-bottom: 0; /* Remove margem inferior padrão */
+}
+
+.btn-facebook {
+    background-color: #3b5998; /* Cor oficial do Facebook */
+}
+
+.btn-instagram {
+    /* Degradê do Instagram */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+
+ </style>
+ 
+  
+      <link rel="stylesheet" href="como_funciona.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="content-page-body">
+    
+    <div class="background-overlay"></div> 
+    
+    <div class="container">
+
+        <header class="content-header">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar ao Menu</a>
+            <h1 class="lilac-highlight">Desafio 30D✨</h1>
+        </header>
+
+
+<section class="section-card video-section">
+    <h2 class="section-title"> Entenda o Método</h2>
+    <div class="video-embed-box">
+        <iframe width="100%" height="315" 
+            src="https://www.youtube.com/embed/4-zjQvTDnbw?si=L5Lh-Rcdkfq9c7f6" title="YouTube video player" 
+            frameborder="0" allowfullscreen>
+        </iframe>
+        </div>
+</section>
+
+
+
+
+        <section class="section-card introduction-text">
+            
+            <p>São 30 dias de foco total com um protocolo alimentar personalizado de acordo com o seu objetivo e um treino individualizado, que pode ser feito na academia ou em casa. 💪</p>
+            
+            <p>Durante o desafio, você terá avaliações semanais por foto, acompanhando sua evolução de forma real e direcionada para o emagrecimento. 📸🔥</p>
+            
+            <p class="highlight-paragraph">E o melhor: você fará parte de um grupo exclusivo de mulheres no WhatsApp, onde vai encontrar apoio, dicas, motivação e resultados de verdade. 💬✨</p>
+            
+            <p class="final-motto">É o seu momento de transformar o corpo e a mente em apenas 30 dias!</p>
+            
+        </section>
+
+     
+        <section class="section-card services-list">
+            <h2 class="section-title">O Desafio Inclui:</h2>
+            
+            <ul class="fancy-list">
+                <li><i class="fas fa-dumbbell"></i> Treino Personalizado</li>
+                <li><i class="fas fa-utensils"></i> Protocolo Alimentar</li>
+                <li><i class="fab fa-whatsapp"></i> Suporte Individual via WhatsApp</li>
+                <li><i class="fas fa-users"></i> Acesso ao Grupo Privado (Comunidade)</li>
+                <li><i class="fas fa-camera"></i> Avaliação Semanal por Fotos</li>
+            </ul>
+        </section>
+
+        <section class="final-cta-section">
+            <h2 class="section-title">Pronta para o Desafio?</h2>
+            
+            <a href="https://api.whatsapp.com/send?phone=5591980156775&text=Ol%C3%A1%2C%20quero%20saber%20mais%20do%20desafio%2030%20dias" 
+               class="btn btn-whatsapp-desafio cta-final-pulse" 
+               target="_blank">
+                <i class="fab fa-whatsapp"></i> QUERO ME INSCREVER AGORA!
+            </a>
+
+             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6gw0H6vCWVE70i8ZcZ2pPsdqD2qehTLhFMze0avM_7J0q4Q/viewform" class="btn btn-main cta-secondary">
+                <i class="fas fa-file-alt"></i> Preencher Ficha de Avaliação
+            </a>
+            
+        </section>
+
+    </div>
+    
+</body>
+</html>

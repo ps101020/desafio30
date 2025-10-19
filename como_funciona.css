@@ -1,0 +1,131 @@
+/* As cores, fontes e estilos de botão são herdados do style.css principal */
+
+
+.back-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 700;
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--color-lilac-highlight);
+}
+
+
+
+/* CARTÕES DE SEÇÃO (Mais elegantes) */
+.section-card {
+    background-color: var(--color-card-bg); /* Fundo cinza escuro/transparente */
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* TEXTO DE INTRODUÇÃO */
+.introduction-text p {
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.highlight-paragraph {
+    font-weight: 700;
+    color: var(--color-lilac-highlight); /* Destaque em lilás */
+    border-left: 4px solid var(--color-lilac-highlight);
+    padding-left: 15px;
+}
+
+.final-motto {
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-highlight); /* Usa o rosa vibrante para o toque final */
+    margin-top: 20px;
+}
+
+/* VÍDEO EMBED */
+.video-embed-box {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    height: 0;
+    margin-top: 20px;
+}
+
+/* No seu style.css, encontre a regra para .video-embed-box iframe */
+
+.video-embed-box iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 8px;
+    
+    /* CORREÇÃO DA BORDA: */
+    border: 3px solid var(--color-lilac-highlight); /* Garante que a borda esteja definida */
+    box-sizing: border-box; /* Garante que a borda não adicione largura/altura extra e seja contida */
+    
+    /* Adicione esta propriedade para garantir que não haja cortes estranhos */
+    overflow: hidden; 
+}
+
+/* Opcional: Ajuste para o contêiner do vídeo se o problema persistir */
+/*
+.video-embed-box {
+    overflow: hidden; 
+    padding-bottom: 56.25%; 
+    position: relative;
+    height: 0;
+    margin-top: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); 
+}
+*/
+
+/* LISTA DE SERVIÇOS */
+.fancy-list {
+    list-style: none; /* Remove marcadores padrão */
+    padding: 0;
+}
+
+.fancy-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #333333;
+    color: var(--color-text);
+    font-size: 1.05em;
+    font-weight: 500;
+}
+
+.fancy-list li i {
+    color: var(--color-primary-end); /* Ícones Azuis */
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.fancy-list li:last-child {
+    border-bottom: none;
+}
+
+/* CTA FINAL DA PÁGINA */
+.final-cta-section {
+    padding: 20px 0 50px;
+    text-align: center;
+}
+
+.cta-secondary {
+    background-color: #333333; /* Fundo cinza escuro para ser secundário */
+    border: 1px solid var(--color-lilac-highlight);
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+0;
+}
+

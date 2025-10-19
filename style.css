@@ -1,0 +1,414 @@
+/* RESET E DEFINIÇÃO DE FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+/* style.css - Adicione no topo do arquivo */
+
+/* Importa a Playfair Display com o peso 900 (Black/Mais grosso) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
+
+/* O restante do seu CSS vem abaixo... */
+
+
+
+:root {
+    --color-bg-dark: #121212; /* Fundo principal mais escuro */
+    --color-card-bg: rgba(30, 30, 30, 0.9); /* Fundo dos cards com transparência */
+    --color-text: #E0E0E0; /* Branco suave */
+    --color-primary-start: #7B00D1; /* Roxo escuro */
+    --color-primary-end: #4169E1; /* Azul Royal (o tom que você gostou) */
+    --color-highlight: #7B00D1; /* Rosa Vibrante para CTA */
+}
+
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    /* IMAGEM DE FUNDO DO BODY */
+    background-image: url('imgbody.jpg'); /* Substitua 'fundo_desafio.jpg' pela sua imagem */
+    background-size: cover; /* Cobre toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* A imagem fica fixa ao rolar */
+    position: relative; /* Para o overlay */
+}
+
+/* OVERLAY PARA ESCURECER A IMAGEM DE FUNDO E AJUDAR NA LEITURA */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Preto com 70% de opacidade */
+    z-index: -1; /* Fica abaixo do conteúdo */
+}
+
+.container {
+    max-width: 600px;
+   
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Para o conteúdo ficar acima do overlay */
+    z-index: 1;
+}
+
+/* ESTILO DO CABEÇALHO */
+.header {
+    padding: 40px 0 30px;
+}
+
+.profile-pic { /* Se decidir usar a foto de perfil */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-highlight);
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.5);
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em; /* Título maior */
+    font-weight: 700;
+    margin: 10px 0 5px;
+    color: var(--color-highlight); /* Destaque o nome da Bruna */
+    text-shadow: 0 0 10px rgba(255, 64, 129, 0.7);
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 0;
+    
+    margin-bottom: 15px;
+    
+    margin: 5px 0 15px;
+    color: var(--color-text);
+    /* APLICAÇÃO DA NOVA FONTE */
+    font-family: 'Playfair Display', serif; 
+    font-weight: 500; /* Define o peso como Black (o mais grosso) */
+    
+}
+
+.tagline {
+    font-size: 1.1em;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+/* NAVEGAÇÃO PRINCIPAL (OS BOTÕES) */
+.main-navigation {
+    display: flex;
+    flex-direction: column; /* Botões um abaixo do outro */
+    gap: 15px; /* Espaço entre os botões */
+    
+    margin: auto;
+}
+
+/* ESTILO GERAL DOS BOTÕES */
+.btn {
+    display: flex; /* Para alinhar ícone e texto */
+    justify-content: center;
+    align-items: center;
+    width: 97%;
+    padding: 18px 8px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-size: 1.15em;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    m
+    
+}
+
+.btn i {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.btn-main {
+    background: linear-gradient(135deg, var(--color-primary-start), var(--color-primary-end));
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(75, 0, 130, 0.6); 
+    opacity: 0.95;
+}
+
+/* ESTILO ESPECÍFICO DO BOTÃO WHATSAPP / CTA FINAL */
+.btn-whatsapp-desafio {
+    background: linear-gradient(135deg, #075E54, #128C7E); /* Verde WhatsApp */
+    color: #FFFFFF;
+    border: none;
+    margin-top: 30px; /* Mais espaço antes do CTA final */
+}
+
+/* ANIMAÇÃO DE PULSAÇÃO PARA O CTA FINAL */
+.cta-final-pulse {
+    animation: pulse-final 2s infinite; 
+}
+
+@keyframes pulse-final {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(18, 140, 126, 0.5); } 
+    50% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(18, 140, 126, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(18, 140, 126, 0); }
+}
+
+/* Estilos para as futuras seções de conteúdo (se forem na mesma página) */
+.content-section {
+    min-height: 500px; /* Apenas para simular espaço */
+    background-color: var(--color-card-bg);
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    display: none; /* Estas seções estariam em outras páginas ou seriam controladas por JS */
+}
+
+/* FOOTER (Opcional) */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #888888;
+}
+
+/* --- NOVAS VARIAVEIS DE COR E FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+:root {
+    /* Cor Lilás para o Título H1 */
+    --color-lilac-highlight: #CC99FF; /* Lilás Claro/Roxo Pastel */
+    /* ... (Mantenha as outras variáveis) ... */
+}
+
+/* --- ESTILO DO BODY E OVERLAY (MANTIDO) --- */
+/* ... (Mantenha os estilos body e background-overlay anteriores) ... */
+
+
+/* --- NOVO HEADER COM IMAGEM DE FUNDO --- */
+.hero-header {
+    background-image: url('foto_bruna_header.jpg'); /* USE A FOTO DE FUNDO DA CLIENTE AQUI */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px 30px; /* Mais altura para o header */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay interno para garantir que o texto seja legível sobre a foto */
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sombra preta de 50% */
+    z-index: -1;
+}
+
+.header-content {
+    /* Centraliza o conteúdo dentro do header */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-pic {
+    /* Estilo da foto de perfil sobre a imagem de fundo */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-lilac-highlight);
+    box-shadow: 0 0 20px rgba(204, 153, 255, 0.8);
+    margin-bottom: 15px;
+}
+
+/* H1 Lilás de Destaque */
+.lilac-highlight {
+    font-size: 2.8em;
+    font-weight: 900; /* Extra bold */
+    color: var(--color-lilac-highlight); 
+    text-shadow: 0 0 12px rgba(204, 153, 255, 0.8);
+    margin: 0 0 5px;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 5px 0 15px;
+    color: var(--color-text);
+}
+
+
+/* --- ANIMAÇÃO DOS BOTÕES (FADE-IN INICIAL) --- */
+.animated-btn {
+    opacity: 0; /* Inicia invisível */
+    transform: translateY(20px); /* Inicia 20px abaixo */
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: var(--delay); /* Usa a variável inline no HTML */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- SEÇÃO DE REDES SOCIAIS --- */
+.social-section {
+    padding: 30px 0;
+}
+
+.social-title {
+    font-size: 1.2em;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaço entre os botões sociais */
+}
+
+.btn-social {
+    width: 48%; /* Ocupa metade da largura para ficar lado a lado */
+    padding: 15px;
+    font-size: 1.05em;
+    margin-bottom: 0; /* Remove margem inferior padrão */
+}
+
+.btn-facebook {
+    background-color: #3b5998; /* Cor oficial do Facebook */
+}
+
+.btn-instagram {
+    /* Degradê do Instagram */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+
+/* --- NOVA ANIMAÇÃO: SCROLL REVEAL (SUBIR DE BAIXO) --- */
+
+/* 1. Define o estado inicial (invisível e ligeiramente abaixo) */
+.section-card, 
+.final-cta-section {
+    opacity: 0; /* Inicia invisível */
+    transform: translateY(40px); /* Inicia 40px abaixo de sua posição final */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transição suave */
+}
+
+/* 2. Define o estado final (visível e na posição correta) */
+/* Esta classe será adicionada via JavaScript quando a seção for vista */
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ================================================= */
+/* --- ESTILOS PARA PÁGINA DE DEPOIMENTOS (depoimentos.html) --- */
+/* ================================================= */
+
+/* --- Estilos Gerais de Conteúdo (Reaproveitados) --- */
+
+.content-header {
+    padding: 30px 0 20px;
+    text-align: center;
+}
+
+.back-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 700;
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--color-lilac-highlight);
+}
+
+/* --- ESTILO PARA OS CARDS DE DEPOIMENTOS --- */
+
+.testimonials-list {
+    padding-top: 20px;
+}
+
+.testimonial-card {
+    /* Fundo Dark Mode, ligeiramente mais claro para se destacar */
+    background-color: #1a1a1a; 
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px; 
+    /* Barra lateral Lilás */
+    border-left: 5px solid var(--color-lilac-highlight); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.quote-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.quote-icon {
+    color: var(--color-lilac-highlight);
+    font-size: 1.8em;
+    margin-right: 15px;
+}
+
+.client-name {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--color-text); 
+}
+
+.quote-text {
+    font-style: italic;
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+
+/* --- ESTILO PARA SCROLL REVEAL (ANIMAÇÃO) --- */
+/* Esta seção se aplica a todas as páginas com animação! */
+
+/* 1. Define o estado inicial (invisível e ligeiramente abaixo) */
+/* Usa a classe genérica .reveal-element presente no HTML */
+.introduction-text, 
+.final-cta-section,
+.carousel-section,
+.reveal-element /* <--- CLASSE CHAVE para os cards de depoimento! */
+{
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+/* 2. Define o estado final (visível e na posição correta) */
+/* Esta classe é adicionada pelo JavaScript */
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================================= */
+/* --- FIM DO CSS EXCLUSIVO PARA DEPOIMENTOS --- */
+/* ================================================= */

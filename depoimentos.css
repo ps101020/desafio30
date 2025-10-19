@@ -1,0 +1,94 @@
+/* ================================================= */
+/* --- ESTILOS PARA PÁGINA DE DEPOIMENTOS (depoimentos.html) --- */
+/* ================================================= */
+
+/* --- Estilos Gerais de Conteúdo (Reaproveitados) --- */
+
+.content-header {
+    padding: 30px 0 20px;
+    text-align: center;
+}
+
+.back-link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 700;
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--color-lilac-highlight);
+}
+
+/* --- ESTILO PARA OS CARDS DE DEPOIMENTOS --- */
+
+.testimonials-list {
+    padding-top: 20px;
+}
+
+.testimonial-card {
+    /* Fundo Dark Mode, ligeiramente mais claro para se destacar */
+    background-color: #1a1a1a; 
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px; 
+    /* Barra lateral Lilás */
+    border-left: 5px solid var(--color-lilac-highlight); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.quote-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.quote-icon {
+    color: var(--color-lilac-highlight);
+    font-size: 1.8em;
+    margin-right: 15px;
+}
+
+.client-name {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--color-text); 
+}
+
+.quote-text {
+    font-style: italic;
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+
+/* --- ESTILO PARA SCROLL REVEAL (ANIMAÇÃO) --- */
+/* Esta seção se aplica a todas as páginas com animação! */
+
+/* 1. Define o estado inicial (invisível e ligeiramente abaixo) */
+/* Usa a classe genérica .reveal-element presente no HTML */
+.introduction-text, 
+.final-cta-section,
+.carousel-section,
+.reveal-element /* <--- CLASSE CHAVE para os cards de depoimento! */
+{
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+/* 2. Define o estado final (visível e na posição correta) */
+/* Esta classe é adicionada pelo JavaScript */
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================================= */
+/* --- FIM DO CSS EXCLUSIVO PARA DEPOIMENTOS --- */
+/* ================================================= */
